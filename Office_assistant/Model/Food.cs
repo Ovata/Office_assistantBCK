@@ -13,7 +13,9 @@ namespace Office_assistant.Model
 
         [Required]
         public string Name { get; set; }
+
         [Required]
+        [Display(Name ="Food Name")]
         public string Food_name { get; set; }
         [Required]
         public int Price { get; set; }
