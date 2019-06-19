@@ -64,8 +64,6 @@ namespace Office_assistant.Repositories
             food.Name = entity.Name;
             food.Food_name = entity.Food_name;
             food.Price = entity.Price;
-            //stores.PhoneNumber = entity.PhoneNumber;
-            //stores.Description = entity.Description;
             _context.SaveChanges();
         }
 
