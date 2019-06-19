@@ -5,7 +5,14 @@ using System.Threading.Tasks;
 
 namespace Office_assistant.Repositories
 {
-    public class IRepository
+    public interface _dataRepository<TEntity>
     {
+      
+            IEnumerable<TEntity> GetAll();
+            TEntity Get(int id);
+            void Add(TEntity entity);
+            void Update(TEntity dbEntity, TEntity entity);
+            void Delete(TEntity entity);
+
     }
 }

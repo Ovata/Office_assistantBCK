@@ -8,8 +8,7 @@ namespace Office_assistant.Model
 {
     public class Food
     {
-        [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }

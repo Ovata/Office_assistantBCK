@@ -9,12 +9,17 @@ namespace Office_assistant.Context
 {
     public class ApplicationDbContext : DbContext
     {
+
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> option) : base(option)
+        {
+
+        }
+        
         public DbSet<Food> Foods { get; set; }
         //public DbSet<Post> Posts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=bloging.db");
         }
     }
 }
