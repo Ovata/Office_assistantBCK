@@ -9,6 +9,8 @@ namespace Office_assistant.Model
 {
     public class subFood
     {
+        public int Id { get; set; }
+
         [Required]
         [Display(Name = "Food Name")]
         public string Food_name { get; set; }

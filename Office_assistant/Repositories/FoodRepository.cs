@@ -62,19 +62,17 @@ namespace Office_assistant.Repositories
         {
 
             food.Name = entity.Name;
-            food.Food_name = entity.Food_name;
-            food.Price = entity.Price;
-            _context.SaveChanges();
+            food.subFoods = entity.subFoods;
+
+            //public Stores GetStoreByUserId(int id)
+            //{
+            //    return _context.Stores
+            //        .Where(u => u.UserId == id)
+            //        .Include(us => us.User)
+            //        .FirstOrDefault(c => c.StoreId == id);
+
+            //}
         }
 
-        //public Stores GetStoreByUserId(int id)
-        //{
-        //    return _context.Stores
-        //        .Where(u => u.UserId == id)
-        //        .Include(us => us.User)
-        //        .FirstOrDefault(c => c.StoreId == id);
-
-        //}
     }
-
 }
