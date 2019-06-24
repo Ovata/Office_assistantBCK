@@ -38,3 +38,4 @@ C:\Users\HP\Desktop\Tobi\Office_assistantBCK\Office_assistant\bin\Debug\netcorea
 C:\Users\HP\Desktop\Tobi\Office_assistantBCK\Office_assistant\obj\Debug\netcoreapp2.2\Office_assistant.RazorTargetAssemblyInfo.cache
 C:\Users\HP\Desktop\Tobi\Office_assistantBCK\Office_assistant\obj\Debug\netcoreapp2.2\Office_assistant.dll
 C:\Users\HP\Desktop\Tobi\Office_assistantBCK\Office_assistant\obj\Debug\netcoreapp2.2\Office_assistant.pdb
+C:\Users\HP\Desktop\Tobi\Office_assistantBCK\Office_assistant\obj\Debug\netcoreapp2.2\Office_assistant.csprojAssemblyReference.cache
