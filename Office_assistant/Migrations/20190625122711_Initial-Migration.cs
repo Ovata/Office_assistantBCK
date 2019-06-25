@@ -3,17 +3,22 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Office_assistant.Migrations
 {
-    public partial class Second : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Food_name",
-                table: "Foods");
-
-            migrationBuilder.DropColumn(
-                name: "Price",
-                table: "Foods");
+            migrationBuilder.CreateTable(
+                name: "Foods",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Foods", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "subFood",
@@ -47,17 +52,8 @@ namespace Office_assistant.Migrations
             migrationBuilder.DropTable(
                 name: "subFood");
 
-            migrationBuilder.AddColumn<string>(
-                name: "Food_name",
-                table: "Foods",
-                nullable: false,
-                defaultValue: "");
-
-            migrationBuilder.AddColumn<int>(
-                name: "Price",
-                table: "Foods",
-                nullable: false,
-                defaultValue: 0);
+            migrationBuilder.DropTable(
+                name: "Foods");
         }
     }
 }

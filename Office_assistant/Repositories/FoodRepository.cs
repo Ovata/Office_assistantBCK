@@ -1,4 +1,5 @@
-﻿using Office_assistant.Context;
+using Microsoft.EntityFrameworkCore;
+using Office_assistant.Context;
 using Office_assistant.Model;
 using System;
 using System.Collections.Generic;
@@ -33,14 +34,7 @@ namespace Office_assistant.Repositories
         public Food Get(int id)
         {
             return _context.Foods
-                   //.Include(cs => cs.Customers)
-                   //.ThenInclude(cu => cu.User)
-                   //.Include(p => p.Products)
-                   //.ThenInclude(f => f.Files)
-                   //.Include(r => r.Review)
-                   //.Include(u => u.User)
-                   //.Include(i => i.StoreImage)
-                   //.Include(w => w.Wallet)
+                  .Include(cs => cs.subFoods)
                    .FirstOrDefault(c => c.Id == id);
         }
         //public IQueryable<Stores> Gettores(int id)
@@ -51,10 +45,7 @@ namespace Office_assistant.Repositories
         public IEnumerable<Food> GetAll()
         {
             return _context.Foods
-                //.Include(cs => cs.Customers)
-                //.Include(p => p.Products)
-                //.ThenInclude(f => f.Files)
-                //.Include(r => r.Review)
+                .Include(cs => cs.subFoods)
                 .ToList();
         }
 

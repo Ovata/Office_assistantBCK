@@ -10,8 +10,8 @@ using Office_assistant.Context;
 namespace Office_assistant.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190620162924_Second")]
-    partial class Second
+    [Migration("20190625122711_Initial-Migration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

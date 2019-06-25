@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,7 +30,8 @@ namespace Office_assistant
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<_dataRepository<Food>, FoodRepository>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+      services.AddCors();
+      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services
              .AddDbContext<ApplicationDbContext>(options =>
@@ -51,7 +52,10 @@ namespace Office_assistant
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseCors(
+             options => options.WithOrigins("http://example.com").AllowAnyMethod()
+            );
+      app.UseMvc();
         }
     }
 }
