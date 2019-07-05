@@ -30,8 +30,8 @@ namespace Office_assistant
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<_dataRepository<Food>, FoodRepository>();
-      services.AddCors();
-      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddCors();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services
              .AddDbContext<ApplicationDbContext>(options =>
@@ -53,9 +53,9 @@ namespace Office_assistant
 
             app.UseHttpsRedirection();
             app.UseCors(
-             options => options.WithOrigins("http://example.com").AllowAnyMethod()
-            );
-      app.UseMvc();
+           options => options.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials()
+          );
+            app.UseMvc();
         }
     }
 }
